@@ -9,7 +9,7 @@ class Config:
     
     # API Settings
     API_HOST = os.getenv('API_HOST', '0.0.0.0')
-    API_PORT = int(os.getenv('API_PORT', 6000))
+    API_PORT = int(os.getenv('API_PORT', 6200))
     DEBUG = os.getenv('DEBUG', 'True').lower() == 'true'
     
     # Model Settings
@@ -74,6 +74,7 @@ class ProductionConfig(Config):
     DEBUG = False
     LOG_LEVEL = 'WARNING'
     API_HOST = '0.0.0.0'
+    API_PORT = int(os.environ.get('PORT', 6200))
 
 class TestingConfig(Config):
     """Testing configuration"""

@@ -299,8 +299,9 @@ def model_info():
         }), 500
 
 if __name__ == '__main__':
+    port = int(os.environ.get('PORT', app.config['API_PORT']))
     app.run(
         debug=app.config['DEBUG'],
         host=app.config['API_HOST'],
-        port=app.config['API_PORT']
+        port=port
     ) 

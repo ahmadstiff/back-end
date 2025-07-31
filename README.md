@@ -32,6 +32,34 @@ python app.py
 
 The API will be available at `http://localhost:5000`
 
+## 🌐 Deployment
+
+### Render Deployment
+
+This API is configured for deployment on Render. To deploy:
+
+1. **Connect your repository to Render**
+2. **Use these settings:**
+   - **Root Directory**: (leave empty for root)
+   - **Build Command**: `pip install -r requirements.txt`
+   - **Start Command**: `gunicorn app:app --bind 0.0.0.0:$PORT`
+
+3. **Environment Variables:**
+   - `FLASK_ENV`: `production`
+   - `PYTHON_VERSION`: `3.11.0`
+
+4. **Health Check Path**: `/health`
+
+The API will be automatically deployed and available at your Render URL.
+
+### Local Development
+
+For local development, you can also use the setup script:
+
+```bash
+./setup.sh
+```
+
 ## 📋 API Endpoints
 
 ### 1. Health Check
